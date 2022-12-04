@@ -1,3 +1,6 @@
 [submodule "backend"]
 	path = backend
 	url = C:\\Users\\franc\\Desktop\\repos\\pyTraderMonoRepo\\backend
+[submodule "frontend"]
+	path = frontend
+	url = C:\\Users\\franc\\Desktop\\repos\\pyTraderMonoRepo\\frontend
