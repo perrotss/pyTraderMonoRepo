@@ -1,37 +1,37 @@
-const webpack = require('webpack');
+const path = require("path");
+const webpack = require("webpack");
 
 module.exports = {
-  lintOnSave: false,
-  configureWebpack: {
-    // Set up all the aliases we use in our app.
-    resolve: {
-      alias: {
-        'chart.js': 'chart.js/dist/Chart.js'
-      }
-    },
-    plugins: [
-      new webpack.optimize.LimitChunkCountPlugin({
-        maxChunks: 6
-      })
-    ]
-  },
-  pwa: {
-    name: 'Vue Black Dashboard',
-    themeColor: '#344675',
-    msTileColor: '#344675',
-    appleMobileWebAppCapable: 'yes',
-    appleMobileWebAppStatusBarStyle: '#344675'
-  },
-  pluginOptions: {
-    i18n: {
-      locale: 'en',
-      fallbackLocale: 'en',
-      localeDir: 'locales',
-      enableInSFC: false
+    publicPath: process.env.NODE_ENV == "production" ? "/" :  "/",
+	transpileDependencies: [
+        "vue-echarts",
+        "resize-detector"
+    ],
+    configureWebpack: {
+          resolve: {
+            alias: {
+                "vue$": "vue/dist/vue.esm.js",
+                "@": path.resolve(__dirname, "src/"),
+                Api: path.resolve(__dirname, "src/api/"),
+                Components: path.resolve(__dirname, "src/components/"),
+                Constants: path.resolve(__dirname, "src/constants/"),
+                Container: path.resolve(__dirname, "src/container/"),
+                Views: path.resolve(__dirname, "src/views/"),
+                Helpers: path.resolve(__dirname, "src/helpers/"),
+                Themes: path.resolve(__dirname, "src/themes/"),
+                Assets: path.resolve(__dirname, "src/assets")
+                
+            },
+            extensions: ["*", ".js", ".vue", ".json"]
+        },
+        plugins: [
+              //jquery plugin
+            new webpack.ProvidePlugin({
+                $: "jquery",
+                jquery: "jquery",
+                "window.jQuery": "jquery",
+                jQuery: "jquery"
+            })
+        ]
     }
-  },
-  css: {
-    // Enable CSS source maps.
-    sourceMap: process.env.NODE_ENV !== 'production'
-  }
-};
+}
