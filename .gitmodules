@@ -1,6 +1,6 @@
 [submodule "backend"]
 	path = backend
-	url = C:\\Users\\franc\\Desktop\\repos\\pyTraderMonoRepo\\backend
+	url = https://github.com/submodule/backend.git
 [submodule "frontend"]
 	path = frontend
-	url = C:\\Users\\franc\\Desktop\\repos\\pyTraderMonoRepo\\frontend
+	url = https://github.com/submodule/frontend.git
