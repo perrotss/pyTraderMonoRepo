@@ -1,6 +1,10 @@
+[submodule "pyTraderLandingPage"]
+	path = pyTraderLandingPage
+	url = https://github.com/perrotss/pyTraderLandingPage.git
 [submodule "backend"]
 	path = backend
 	url = https://github.com/perrotss/pyTraderBackEnd.git
 [submodule "frontend"]
 	path = frontend
 	url = https://github.com/perrotss/pyTraderFrontEnd.git
+
