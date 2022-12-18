@@ -1,0 +1,3 @@
+[submodule "landingpage/pyTraderLandingPage"]
+	path = landingpage/pyTraderLandingPage
+	url = https://github.com/perrotss/pyTraderLandingPage.git
